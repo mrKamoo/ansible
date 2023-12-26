@@ -1,12 +1,4 @@
-- name: Obtenir la version du firmware sur les switches Aruba
-  hosts: Switches_Aruba
-  gather_facts: no
-  tasks:
-    - name: Exécuter la commande show version via SSH
-      raw: show version
-      register: output
-      ignore_errors: yes
-
-    - name: Afficher la sortie de la commande
-      debug:
-        var: output.stdout_lines
+tasks:
+  - name: Run show version on remote devices
+    community.network.aruba_command:
+      commands: show version
