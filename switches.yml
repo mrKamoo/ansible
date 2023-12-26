@@ -1,4 +1,4 @@
-- hosts: Switches_Aruba
+ - hosts: Switches_Aruba
     tasks:
      - name: Run show version on remote devices
      community.network.aruba_command:
