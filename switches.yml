@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Exécuter la commande show version via SSH
-      command: show version
+      raw: show version
       register: output
       ignore_errors: yes
 
