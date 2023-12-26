@@ -1,4 +1,4 @@
-- hosts: linode
+- hosts: Linux Servers
   strategy: debug
   tasks:
       - name: Update all host/vm packages
