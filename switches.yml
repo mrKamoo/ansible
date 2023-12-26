@@ -1,24 +1,28 @@
-- hosts: Switches_Aruba
-  - name: Run show version on remote devices
-    community.network.aruba_command:
-    commands: show version
+- name: Obtenir la version du firmware sur les switches Aruba
+  hosts:  Switches_Aruba
+  gather_facts: no
+  tasks:
+    - name: Run show version on remote devices
+      community.network.aruba_command:
+      commands: show version
 
   - name: Run show version and check to see if output contains Aruba
     community.network.aruba_command:
-      commands: show version
-      wait_for: result[0] contains Aruba
+    commands: show version
+    wait_for: result[0] contains Aruba
 
   - name: Run multiple commands on remote nodes
     community.network.aruba_command:
-      commands:
+    commands:
       - show version
       - show interfaces
 
   - name: Run multiple commands and evaluate the output
     community.network.aruba_command:
-      commands:
+    commands:
       - show version
       - show interfaces
-       wait_for:
+    wait_for:
       - result[0] contains Aruba
       - result[1] contains Loopback0
+
