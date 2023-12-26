@@ -1,5 +1,5 @@
 - name: Obtenir la version du firmware sur les switches Aruba
-  hosts: switches
+  hosts: Switches_Aruba
   gather_facts: no
   tasks:
     - name: Exécuter la commande show version via SSH
