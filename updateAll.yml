@@ -1,4 +1,4 @@
-- hosts: Linux Servers
+- hosts: LinuxServers
   strategy: debug
   tasks:
       - name: Update all host/vm packages
