@@ -1,25 +1,25 @@
- - hosts: Switches_Aruba
+- hosts: Switches_Aruba
     tasks:
      - name: Run show version on remote devices
-     community.network.aruba_command:
-      commands: show version
+       community.network.aruba_command:
+       commands: show version
 
      - name: Run show version and check to see if output contains Aruba
-     community.network.aruba_command:
-      commands: show version
-      wait_for: result[0] contains Aruba
+       community.network.aruba_command:
+        commands: show version
+         wait_for: result[0] contains Aruba
 
      - name: Run multiple commands on remote nodes
-     community.network.aruba_command:
-      commands:
-       - show version
-       - show interfaces
+       community.network.aruba_command:
+        commands:
+        - show version
+        - show interfaces
 
      - name: Run multiple commands and evaluate the output
-     community.network.aruba_command:
-      commands:
-       - show version
-       - show interfaces
-      wait_for:
-       - result[0] contains Aruba
-       - result[1] contains Loopback0
+       community.network.aruba_command:
+        commands:
+         - show version
+         - show interfaces
+        wait_for:
+         - result[0] contains Aruba
+         - result[1] contains Loopback0
