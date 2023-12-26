@@ -1,4 +1,5 @@
-tasks:
+gather_facts: no
+  tasks:
   - name: Run show version on remote devices
     community.network.aruba_command:
       commands: show version
